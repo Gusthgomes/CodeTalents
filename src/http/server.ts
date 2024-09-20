@@ -6,7 +6,8 @@ import {
 } from "fastify-type-provider-zod";
 import fastifyCors from "@fastify/cors";
 
-import { getCategoryRoute } from "../routes/category/get-category";
+import { GetCategoryRoute } from "../routes/category/get-category";
+import { CreateCategoryRoute } from "../routes/category/create-category";
 
 const app = fastify({
   logger: true,
@@ -19,7 +20,8 @@ app.register(fastifyCors, {
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.register(getCategoryRoute);
+app.register(GetCategoryRoute);
+app.register(CreateCategoryRoute);
 
 try {
   app
