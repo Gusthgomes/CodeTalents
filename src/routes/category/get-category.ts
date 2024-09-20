@@ -2,7 +2,7 @@ import { FastifyPluginAsync } from "fastify";
 
 import { getCategory } from "../../functions/category/get-category";
 
-export const getCategoryRoute: FastifyPluginAsync = async (app) => {
+export const GetCategoryRoute: FastifyPluginAsync = async (app) => {
   app.get("/category", async (request, reply) => {
     const result = await getCategory();
 
